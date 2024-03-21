@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo/netflix.png";
-import avatar from "../assets/logo/Netflix-avatar.png"
+import avatar from "../assets/logo/Netflix-avatar.png";
 import { IoSearch } from "react-icons/io5";
 import { FaRegBell } from "react-icons/fa";
 
@@ -10,12 +10,24 @@ const Header = () => {
       <div className="md:flex gap-8  items-center">
         <img src={logo} alt="netflix logo" className="w-16 md:w-24" />
         <ul className="hidden lg:flex gap-4">
-          <li>Home</li>
-          <li>TV Shows</li>
-          <li>Movies</li>
-          <li>New & Popular</li>
-          <li>My List</li>
-          <li>Browse By Language</li>
+          <li>
+            <a href="#"> Home </a>
+          </li>
+          <li>
+            <a href="#"> TV Shows </a>
+          </li>
+          <li>
+            <a href="#"> Movies </a>
+          </li>
+          <li>
+            <a href="#"> New & Popular </a>
+          </li>
+          <li>
+            <a href="#"> My List</a>
+          </li>
+          <li>
+            <a href="#"> Browse By Language</a>
+          </li>
         </ul>
       </div>
       <div>
@@ -23,16 +35,14 @@ const Header = () => {
           <li>
             <IoSearch className="text-2xl" />
           </li>
-          <li>Children</li>
+          <li>
+            <a href="#">Children</a>
+          </li>
           <li>
             <FaRegBell className="text-2xl" />
           </li>
           <li>
-            <img
-              src={avatar}
-              alt="user profile"
-              className="w-9 rounded-md"
-            />
+            <img src={avatar} alt="user profile" className="w-9 rounded-md" />
           </li>
         </ul>
       </div>
