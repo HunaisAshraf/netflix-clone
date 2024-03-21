@@ -14,14 +14,14 @@ const Banner = () => {
     <div>
       <div
         style={{ backgroundImage: `url(${banner})` }}
-        className="md:min-h-screen px-4 md:px-14 md:py-5  bg-no-repeat bg-cover "
+        className="md:min-h-screen px-4 md:px-14 md:py-5 bg-no-repeat bg-cover "
       >
         <img
           src={bannerTitle}
           alt="title"
           className="pt-8 md:pt-52 h-32 sm:h-auto"
         />
-        <p>
+        <p className="md:w-[600px]">
           In disguise as her friend, Ha-ri shows up to a blind date to scare him
           away. But plans go awry when he turns out to be her CEO — and makes a
           proposal.
