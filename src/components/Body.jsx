@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+
+import Banner from "./Banner";
 
 const Body = () => {
   return (
-    <div className='min-h-screen'>Body</div>
-  )
-}
+    <Banner />
+  );
+};
 
-export default Body
+export default Body;

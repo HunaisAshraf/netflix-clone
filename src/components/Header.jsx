@@ -6,10 +6,10 @@ import { FaRegBell } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <nav className="fixed w-full px-14 py-5 flex justify-between">
-      <div className="flex gap-8  items-center">
-        <img src={logo} alt="netflix logo" className="w-24" />
-        <ul className="flex gap-4">
+    <nav className="fixed w-full px-4 py-2 md:px-14 md:py-5 flex justify-between">
+      <div className="md:flex gap-8  items-center">
+        <img src={logo} alt="netflix logo" className="w-16 md:w-24" />
+        <ul className="hidden lg:flex gap-4">
           <li>Home</li>
           <li>TV Shows</li>
           <li>Movies</li>
