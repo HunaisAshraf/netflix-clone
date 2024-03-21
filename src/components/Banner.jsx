@@ -11,7 +11,6 @@ const Banner = () => {
     axios.get(request).then((response) => {
       const index = Math.floor(Math.random() * response?.data?.results.length);
       setBanner(response?.data?.results[index]);
-      console.log(banner);
     }).catch;
   }, []);
 
