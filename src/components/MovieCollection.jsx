@@ -1,6 +1,6 @@
 import React from "react";
 import MovieRow from "./MovieRow";
-import { requests } from "../constants/constants";
+import { requests } from "../utils/constants";
 
 const MovieCollection = () => {
   return (

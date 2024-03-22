@@ -1,26 +1,18 @@
-import React, { useState } from "react";
-import { API_KEY, BASE_URL, IMAGE_URL } from "../constants/constants";
+import React, { useState, useContext } from "react";
+import { IMAGE_URL } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import AuthContext from "../utils/AuthContext";
 
 const Movie = ({ movie }) => {
-  let navigate = useNavigate();
-  console.log(movie)
+  const { isLoggedIn } = useContext(AuthContext);
 
-  const handleClick = (id) => {
-    // axios
-    //   .get(`${BASE_URL}movie/${id}/videos?api_key=${API_KEY}`)
-    //   .then((response) => {
-    //     // setVideoId(response?.data?.key);
-    //     console.log(response.data)
-    //     navigate(`/video/${response?.data?.key}`);
-    //   })
-    //   .catch((err) => console.log(err));
-  };
+  const navigate = useNavigate();
+
   return (
     <>
+      <p>{isLoggedIn}</p>
       <img
-        onClick={()=>navigate(`video/${movie?.id}`)}
+        onClick={() => navigate(`video/${movie?.id}`)}
         className="movie-card h-36"
         src={`${IMAGE_URL}${movie?.backdrop_path}`}
         alt={movie?.title}

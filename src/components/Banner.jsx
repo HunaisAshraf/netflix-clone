@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaPlay } from "react-icons/fa";
 import { IoIosInformationCircleOutline } from "react-icons/io";
-import { IMAGE_URL,requests } from "../constants/constants";
+import { IMAGE_URL,requests } from "../utils/constants";
 
 const Banner = () => {
   const [banner, setBanner] = useState({});

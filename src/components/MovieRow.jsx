@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Movie from "./Movie";
-import { IMAGE_URL } from "../constants/constants";
+import { IMAGE_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 
 const MovieRow = ({ url, title }) => {

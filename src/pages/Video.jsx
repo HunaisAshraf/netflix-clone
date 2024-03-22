@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import { API_KEY, BASE_URL } from "../constants/constants";
+import { API_KEY, BASE_URL } from "../utils/constants";
 
 const Video = () => {
   const [videoId, setVideoId] = useState("");
