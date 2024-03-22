@@ -2,7 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    background-color: #121212;
-    color: white;
+body {
+  background-color: #111111;
+  color: white;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.movies{
+  display: flex;
+  width: 100%;
+  /* overflow-x: scroll; */
+  
+}
+/* .movies > a{
+  width: 400px;
+} */
+
+.movie-card {
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+.movie-card:hover {
+  transform: scale(1.3);
 }

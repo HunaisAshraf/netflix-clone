@@ -2,23 +2,28 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaPlay } from "react-icons/fa";
 import { IoIosInformationCircleOutline } from "react-icons/io";
-import { IMAGE_URL, request } from "../constants/constants";
+import { IMAGE_URL,requests } from "../constants/constants";
 
 const Banner = () => {
   const [banner, setBanner] = useState({});
 
   useEffect(() => {
-    axios.get(request).then((response) => {
-      const index = Math.floor(Math.random() * response?.data?.results.length);
-      setBanner(response?.data?.results[index]);
-    }).catch;
+    axios
+      .get(requests.PopularMovies)
+      .then((response) => {
+        const index = Math.floor(
+          Math.random() * response?.data?.results.length
+        );
+        setBanner(response?.data?.results[index]);
+      })
+      .catch((error) => console.log(error));
   }, []);
 
   return (
     <div>
       <div
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)),
            url(${IMAGE_URL}${banner?.backdrop_path})`,
         }}
         className="sm:min-h-screen px-4 md:px-14 md:py-5 bg-no-repeat bg-cover"
