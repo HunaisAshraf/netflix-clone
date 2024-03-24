@@ -52,6 +52,4 @@ const MovieRow = ({ row, url, title }) => {
 
 export default MovieRow;
 
-{
-  /* <Movie key={movie?.id} data={movie} /> */
-}
+

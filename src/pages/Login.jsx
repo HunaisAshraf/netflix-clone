@@ -21,7 +21,8 @@ const Login = () => {
     if (res.success) {
       navigate("/");
     } else {
-      toast.error("something went wrong");
+      setLoading(false)
+      toast.error("Invalid credentials");
     }
   };
 

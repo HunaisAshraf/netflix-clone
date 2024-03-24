@@ -22,6 +22,7 @@ const SignUp = () => {
     if (data.success) {
       navigate("/");
     } else {
+      setLoading(false);
       toast.error("something went wrong");
     }
   };
