@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Movie from "./Movie";
-import { IMAGE_URL } from "../utils/constants";
-import { Link } from "react-router-dom";
+import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 
-const MovieRow = ({ url, title }) => {
+const MovieRow = ({ row, url, title }) => {
   const [movies, setMovies] = useState([]);
+
+  const hoverLeft = () => {
+    var slider = document.getElementById("slider" + row);
+    slider.scrollLeft = slider.scrollLeft - 700;
+  };
+  const hoverRight = () => {
+    var slider = document.getElementById("slider" + row);
+    slider.scrollLeft = slider.scrollLeft + 700;
+  };
 
   useEffect(() => {
     axios
@@ -16,16 +24,29 @@ const MovieRow = ({ url, title }) => {
       .catch((error) => console.log(error));
   }, []);
   return (
-    <div className="p-3">
-      <p className="pb-3 text-2xl font-bold">{title}</p>
-      <div className="relative  items-center group">
-        <div className="flex w-full gap-5 h-full overflow-x-auto overflow-y-hidden whitespace-nowrap scroll-smooth no-scrollbar">
+    <>
+      <p className="p-3 text-2xl font-bold">{title}</p>
+      <div className="flex items-center">
+        <MdNavigateBefore
+          onClick={hoverLeft}
+          className="h-full w-36 relative left-14 text-black bg-white 
+        rounded-full opacity-60 hover:opacity-80"
+        />
+        <div
+          id={"slider" + row}
+          className="flex items-center gap-3 overflow-x-scroll scroll-smooth no-scrollbar"
+        >
           {movies?.map((movie) => (
             <Movie key={movie?.id} movie={movie} />
           ))}
         </div>
+        <MdNavigateNext
+          onClick={hoverRight}
+          className="h-full w-36 relative right-14 text-black bg-white 
+        rounded-full opacity-60 hover:opacity-80"
+        />
       </div>
-    </div>
+    </>
   );
 };
 

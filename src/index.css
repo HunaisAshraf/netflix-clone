@@ -19,20 +19,20 @@ body {
   }
 }
 
-.movies{
+/* .movies{
   display: flex;
   width: 100%;
-  /* overflow-x: scroll; */
+   overflow-x: scroll;
   
-}
+} */
 /* .movies > a{
   width: 400px;
 } */
 
-.movie-card {
+/* .movie-card {
   transition: transform 0.3s ease;
   transform: scale(1);
 }
 .movie-card:hover {
   transform: scale(1.3);
-}
+} */

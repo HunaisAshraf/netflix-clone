@@ -37,6 +37,7 @@ export const AuthProvider = ({ children }) => {
       return { success: true };
     } catch (error) {
       console.log(error);
+      return { success: false };
     }
   };
 

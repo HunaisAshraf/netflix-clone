@@ -8,7 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  console.log(user?.displayName)
 
   let navigate = useNavigate();
 
@@ -66,6 +65,7 @@ const Header = () => {
                   className="w-9 rounded-md"
                 />
               </li>
+              <p>{user?.displayName}</p>
               <li>
                 <button
                   className="bg-red-600 font-bold w-full px-2 py-2 rounded "
@@ -74,7 +74,6 @@ const Header = () => {
                   Logout
                 </button>
               </li>
-              <p>{user?.displayName}</p>
             </>
           ) : (
             <li>

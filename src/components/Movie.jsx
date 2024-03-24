@@ -18,10 +18,9 @@ const Movie = ({ movie }) => {
 
   return (
     <>
-      {/* <p>{isLoggedIn}</p> */}
       <img
         onClick={() => handleClick(movie?.id)}
-        className="movie-card h-36"
+        className="h-36"
         src={`${IMAGE_URL}${movie?.backdrop_path}`}
         alt={movie?.title}
       />
