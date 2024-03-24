@@ -1,18 +1,26 @@
 import React, { useState, useContext } from "react";
 import { IMAGE_URL } from "../utils/constants";
 import { useNavigate } from "react-router-dom";
-import AuthContext from "../utils/AuthContext";
+import AuthContext from "../Context/AuthContext";
 
 const Movie = ({ movie }) => {
-  const { isLoggedIn } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
+  const handleClick = (id) => {
+    if (user) {
+      navigate(`video/${id}`);
+    } else {
+      navigate("/login");
+    }
+  };
+
   return (
     <>
-      <p>{isLoggedIn}</p>
+      {/* <p>{isLoggedIn}</p> */}
       <img
-        onClick={() => navigate(`video/${movie?.id}`)}
+        onClick={() => handleClick(movie?.id)}
         className="movie-card h-36"
         src={`${IMAGE_URL}${movie?.backdrop_path}`}
         alt={movie?.title}
